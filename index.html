@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+	<title>AutoJax - Automatic Ajax forms</title>
+	<link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		html,body {
+			margin:0;
+		}
+		body {
+			font-family: 'Arimo', sans-serif;
+			color:#fff;
+
+			background: rgb(143,196,0); /* Old browsers */
+			background: -moz-linear-gradient(top,  rgba(143,196,0,1) 0%, rgba(143,196,0,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top,  rgba(143,196,0,1) 0%,rgba(143,196,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom,  rgba(143,196,0,1) 0%,rgba(143,196,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc400', endColorstr='#8fc400',GradientType=0 ); /* IE6-9 */
+
+		}
+		section {
+			text-align: center;
+		}
+		h1 {
+			font-size:60px;
+			margin:60px 0 0;
+			text-shadow: 0px 1px 1px rgb(74, 101, 0);
+		}
+		p {
+			font-size:24px;
+			text-transform: uppercase;
+			font-weight: 400;
+			text-shadow: 0px 1px 1px rgb(74, 101, 0);
+		}
+		form {
+			width:400px;
+			margin:60px auto;
+		}
+		input,textarea {
+			width:100%;
+			display:block;
+			padding:16px 10px;
+			font-size:18px;
+			margin:0 0 20px;
+			background:rgb(97, 154, 0);
+			color:rgb(213, 255, 142);
+			box-shadow:inset 0 1px 1px rgb(48, 76, 0);
+			resize: none;
+			border:none;
+			outline:none;
+			box-sizing: border-box;
+		}
+		input[type=submit] {
+			box-shadow: 0 1px 1px rgb(48, 76, 0);
+		}
+
+		::-webkit-input-placeholder {
+		   color: rgb(213, 255, 142);
+		   font-size:18px;
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+		   color: rgb(213, 255, 142);
+		   font-size:18px;  
+		}
+
+		::-moz-placeholder {  /* Firefox 19+ */
+		   color: rgb(213, 255, 142);
+		   font-size:18px;  
+		}
+
+		:-ms-input-placeholder {  
+		   color: rgb(213, 255, 142);
+		   font-size:18px;  
+		}
+	</style>
+	</head>
+<body>
+	<section>
+		<h1>AUTOJAX</h1>
+		<p>Automatic Ajax Forms</p>
+		<form action="send.php">
+			<input type="text" name="name" placeholder="Name">
+			<input type="text" name="email" placeholder="Email">
+			<textarea name="message" placeholder="Message"></textarea>
+			<input type="submit" name="submit">
+		</form>
+	</section>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="autojax.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//Basic version
+				//$('form').autojax();
+				
+			//AutoJax with a callback on Ajax success
+				$('form').autojax({
+					sentCallback:function(){
+						alert(data);
+					}
+				});
+		});
+	</script>
+</body>
+</html>
