@@ -84,7 +84,7 @@ example
 	<input type="text" name="name" placeholder="Name" data-empty="true" data-number="true">
 	<input type="text" name="email" placeholder="Email" data-email="true">
 
-The first input will be checked to see if it is not empty and if it is not a number, the second one will be checked to see if itis a valid email.
+The first input will be checked to see if it is not empty and if it is not a number, the second one will be checked to see if it is a valid email.
 
 Once you have added these attributes you must call AutoJax with some custom options
 
