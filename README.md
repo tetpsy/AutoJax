@@ -121,6 +121,6 @@ If you want to run AutoJax within your own function or onload etc, simply add th
 	method:'custom'
 	//please note only 'submit' and 'custom' strings will work here. default is 'submit'.
 
-Now your autoJax will fire straight away, allowing you to call it in a custom function.
+Now AutoJax will fire straight away, allowing you to call it in a custom function.
 
 
