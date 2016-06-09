@@ -44,20 +44,33 @@ Basic Useage
 
 	$('form').autojax({
 		type:'POST' //Change the ajax type, default is POST
+		
 		customUrl:'false', // If left out, the url used in <form action=""> will be used, if you add an url here, it will override the action="" url. e.g customUrl:'custom.php'
+		
 		data:form.serialize(), //what data will be sent, default is the form's elements values.
-		method:'submit',//'submit' defaults to a form submit function, 'custom' executes without a function, if you need to run ajax in your own function ie .click(), 
+		
+		method:'submit',//'submit' defaults to a form submit function, 'custom' executes without a function, if you need to run ajax in your own function ie .click()
+		
 		useValidation:'false',//'true' to use validation, default is 'false'
+		
 		sentCallback:function(){
-		  //callback if ajax is successful
-		  alert(data);
+			//callback if ajax is successful
+			alert(data);
 		},
+		
 		errorCallback:function(){
-		  //callback if ajax isn't successful
+			//callback if ajax isn't successful
 		}
-		emptyError : function() {},
-		emailError : function() {},
-		numberError : function() {},
+		
+		emptyError : function() {
+			//validation callback if one or more element values are empty	
+		},
+		emailError : function() {
+			//validation callback if element value is not a valid email
+		},
+		numberError : function() {
+			//validation callback if element value is not a number
+		},
 		
 	});
 
