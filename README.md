@@ -1,3 +1,4 @@
+https://raw.githubusercontent.com/tetpsy/AutoJax/master/logo.jpg
 # AutoJax V1.8
 Automatically handles the Ajax Php form process with jQuery.
 A plugin that helps make the Ajax Php submit process a lot simpler.
