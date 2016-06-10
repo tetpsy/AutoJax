@@ -18,7 +18,7 @@ Purpose
 To send PHP forms with ajax and to get php data from a server faster.
 this plugin is not limited to forms and can be used for other ajax requests.
 
-Basic Useage
+Basic Usage
 ------------
 
 1 - Add a simple HTML form
@@ -76,7 +76,7 @@ Basic Useage
 	});
 
  
-Updated Useage | Advanced
+Updated Usage | Advanced
 -------------------------
 
 The updated options are as follows.
