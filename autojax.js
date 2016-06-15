@@ -4,12 +4,12 @@
     $.fn.autojax = function(options) {
       //Defines variables, and default options
       
-      	var form = this,php,validated,empty,email,number;
+      	var form = this,php,validated,empty,email,number,dataInput;
 		//set PLugin defaults
 		var defaults = {
 		    type:'POST',
 		    customUrl:'false',
-		    data:form.serialize(),
+		    data:'default',
 		    method:'submit',//'submit' defaults to a form submit function, 'custom' executes without a function, if you need to run ajax in your own function ie .click(), 
 		    sentCallback : function() {},
 		    errorCallback : function() {},
@@ -20,6 +20,7 @@
 		    Validation:[emptyValidation,emailValidation,numberValidation]
 		}
 		var settings = $.extend({}, defaults, options);
+
 		//if no custom url then use <form action="">
 			if(settings.customUrl === 'false'){
 			  php = form.attr('action');  
@@ -41,6 +42,17 @@
 					//prevent Default form sending
 					event.preventDefault();
 					event.stopPropagation();
+
+
+					//check settings for default data type, default is Form.serialize();
+
+					if(settings.data === 'default'){
+						dataInput = form.serialize();
+					}else{
+						dataInput = settings.data;
+					}
+
+
 					if(validated === 'true'){
 						for(i=0;i<3;i++){
 					    	settings.Validation[i]();
@@ -50,7 +62,7 @@
 					    	$.ajax({
 							  type:settings.type,
 							  url:php,
-							  data:settings.data,
+							  data:dataInput,
 							  success:function(response){
 							    data = response;
 							    //call sentCallback on success
@@ -66,7 +78,7 @@
 						$.ajax({
 						  type:settings.type,
 						  url:php,
-						  data:settings.data,
+						  data:dataInput,
 						  success:function(response){
 						    data = response;
 						    //call sentCallback on success
@@ -80,6 +92,14 @@
 					}
 				});
 		}else if(settings.method === 'custom'){
+			//check settings for default data type, default is Form.serialize();
+					
+			if(settings.data === 'default'){
+				dataInput = form.serialize();
+			}else{
+				dataInput = settings.data;
+			}
+
 			if(validated === 'true'){
 				for(i=0;i<3;i++){
 			    	settings.Validation[i]();
@@ -88,7 +108,7 @@
 			    	$.ajax({
 					  type:settings.type,
 					  url:php,
-					  data:settings.data,
+					  data:dataInput,
 					  success:function(response){
 					    data = response;
 					    //call sentCallback on success
@@ -104,7 +124,7 @@
 				$.ajax({
 				  type:settings.type,
 				  url:php,
-				  data:settings.data,
+				  data:dataInput,
 				  success:function(response){
 				    data = response;
 				    //call sentCallback on success
