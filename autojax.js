@@ -46,7 +46,7 @@
 					    	settings.Validation[i]();
 					    }
 					    if(empty === 'true' && email === 'true' && number === 'true'){
-					    	console.log(empty + ' ' + email + ' ' + number)
+					    	//console.log(empty + ' ' + email + ' ' + number)
 					    	$.ajax({
 							  type:settings.type,
 							  url:php,
