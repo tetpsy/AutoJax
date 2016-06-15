@@ -1,10 +1,18 @@
 <img src="https://raw.githubusercontent.com/tetpsy/AutoJax/master/logo.jpg"/>
-# AutoJax V1.8
+# AutoJax V1.9
 Automatically handles the Ajax Php form process with jQuery.
 A plugin that helps make the Ajax Php submit process a lot simpler.
 
+
+//UPDATES v1.9
+--------------
+
+Fixed a bug that only let the validations work if you use all of them, now you can use any validation alone, or a custom combination of validations and the plugin will detect this and work.
+
+Fixed a bug where the error callbacks would fire multiple times. Now it only fires once if error found.
+
 //UPDATES v1.8
----------
+--------------
 
 //Added Validation, plugin now has options to check if any input is filled in, if its a valid email address, or if its a valid number. each error has its own callback. 
 
