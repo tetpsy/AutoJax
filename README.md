@@ -139,18 +139,19 @@ Now AutoJax will fire straight away, allowing you to call it in a custom functio
 
 --------------
 
-//UPDATES v1.9
---------------
-
-Fixed a bug that only let the validations work if you use all of them, now you can use any validation alone, or a custom combination of validations and the plugin will detect this and work.
-
-Fixed a bug where the error callbacks would fire multiple times. Now it only fires once if error found.
-
 //UPDATES v1.8
 --------------
 
 //Added Validation, plugin now has options to check if any input is filled in, if its a valid email address, or if its a valid number. each error has its own callback. 
 
 //Added support for custom function placement, so you can now add this ajax plugin to your own function rather than the default submit function, for example if you want this to run in a click function or on page load.
+
+
+//UPDATES v1.9
+--------------
+
+Fixed a bug that only let the validations work if you use all of them, now you can use any validation alone, or a custom combination of validations and the plugin will detect this and work.
+
+Fixed a bug where the error callbacks would fire multiple times. Now it only fires once if error found.
 
 --------------
